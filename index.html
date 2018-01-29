@@ -32,9 +32,9 @@
       height: 100px;
       background-size: cover;
       position: absolute;
-      top:50%;
-      left:50%;
-      transform: translate(-50%,-50%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       /* margin: 0 auto;
       margin-top: 500px; */
     }
@@ -228,7 +228,9 @@
       margin-bottom: 30px;
     }
 
-    .testcenter, .testcenter2, .testcenter3 {
+    .testcenter,
+    .testcenter2,
+    .testcenter3 {
       text-align: center;
     }
   </style>
@@ -236,7 +238,9 @@
 
 <body>
   <div class="exit fixed-top">
-    <div class="bc1"><i class="fas fa-angle-double-down fa-5x"></i></div>
+    <div class="bc1">
+      <i class="fas fa-angle-double-down fa-5x"></i>
+    </div>
     <div class="bc2"></div>
   </div>
   <div class="container1">
@@ -273,7 +277,7 @@
               購物網連結
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="http://www.pcstore.com.tw/diamondchestnut/HM/introduce.htm">Action</a>
               <a class="dropdown-item" href="#">Another action</a>
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
@@ -315,7 +319,7 @@
       <div class="sec02">
         <div class="row">
           <div class="col-md-6 sec02-left">
-            <h5>好的堅果，如同鑽石般珍貴</h5>
+            <h5 class="">好的堅果，如同鑽石般珍貴</h5>
             <p>「堅果鑽」是我們為了
               <br>「分享美味幸福」而設立的品牌。</p>
             <p>
@@ -363,18 +367,19 @@
       <div class="sec07">
         <div class="row">
           <div class="col-md-4">
+            <div class="img-fluid" data-toggle="modal" data-target="#exampleModal">
               <img class="img-fluid" src="img/a01.png" alt="">
-              <p>頂極脆甜杏仁</p>
-              <p>$125</p> 
-              <!-- <div class="img-fluid">
-              <a href ="img/a01.png" class="img-fluid" data-lightbox="roadtrip" data-title="是茶餘飯後、解膩消食的最佳點心。" data-alt="app">
-                <img src="img/a01.png" alt="">
-              </a> -->   
-          </div>
-          <div class="col-md-4">
-            <img class="img-fluid" src="img/a02.png" alt="">
+            </div>
             <p>頂極脆甜杏仁</p>
             <p>$125</p>
+          </div>
+          <div class="col-md-4">
+            <div class="img-fluid" data-toggle="modal" data-target="#exampleModal2">
+              <img class="img-fluid" src="img/a02.png" alt="">
+            </div>
+            <!-- <img class="img-fluid" src="img/a02.png" alt="">
+            <p>頂極脆甜杏仁</p>
+            <p>$125</p> -->
           </div>
           <div class="col-md-4">
             <img class="img-fluid" src="img/a03.png" alt="">
@@ -452,6 +457,47 @@
   </div>
   </div>
 
+  <!-- Modal -->
+  <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="row">
+            <!-- 照片 -->
+            <div class="col-md-8 col-12">
+              <img class="img-fluid" src="img/a01.png" alt="">
+            </div>
+            <!-- 文字 -->
+            <div class="col-md-4 col-12">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade bd-example-modal-lg" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="row">
+            <!-- 照片 -->
+            <div class="col-md-8">
+              <img class="img-fluid" src="img/a02.png" alt="">
+            </div>
+            <!-- 文字 -->
+            <div class="col-md-4">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -489,7 +535,7 @@
     });
   </script>
 
-<script src="/js/lightbox.js"></script>
+  <script src="/js/lightbox.js"></script>
 </body>
 
 </html>
