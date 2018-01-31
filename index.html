@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
   <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
-  <link href="/css/lightbox.css" rel="stylesheet">
+  <link href="css/lightbox.css" rel="stylesheet">
 
   <title>Hello, world!</title>
 
@@ -60,7 +60,7 @@
 
     body {
       /* position: relative; */
-      background: rgb(255, 255, 255);
+      background-color: white;
       font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
       font-size: 14px;
       color: #000;
@@ -79,12 +79,12 @@
     }
 
     .swiper-container {
+      margin-top: 86px;
       width: 100%;
-      height: calc(100vh - 65px);
       margin-bottom: 60px;
     }
 
-    .swiper-slide {
+    #swiper-slide {
       text-align: center;
       font-size: 18px;
       background: #fff;
@@ -102,30 +102,12 @@
       -webkit-align-items: center;
       align-items: center;
     }
-
-    .bg-img {
-      height: calc(100vh - 65px);
+    .swiper-slide > img{
       width: 100%;
-      background-size: cover;
     }
-
-    .img1 {
-      background-image: url('img/slider01.png');
-    }
-
-    .img2 {
-      background-image: url('');
-    }
-
-    .img3 {
-      background-image: url('');
-    }
-
-    .swiper-button-next,
-    .swiper-button-prev {
+    .swiper-button-next, .swiper-button-prev {
       background-image: none;
     }
-
     #sec01 {
       position: relative;
       margin-bottom: 30px;
@@ -312,10 +294,25 @@
       bottom: 20px;
       z-index: 9030;
     }
-
-
-
-    @media screen and (max-width:576px) {}
+    .back {
+      background-color: #fff;
+    }
+    .container-fluid01{
+      background-color: rgba(247, 250, 91, 0.5);
+    }
+    .swiper-button-next, .swiper-button-prev{
+      width: 28px;
+      height: 28px;
+      margin-top: -14px;
+    }
+    @media screen and (max-width:576px) {
+      .frontpage {
+        display: none;
+      }
+      #backpage {
+        display: block; 
+      }
+    }
   </style>
 </head>
 
@@ -385,166 +382,175 @@
       </div>
     </nav>
     <!-- Swiper -->
-    <div id="swiper" class="swiper-container">
+    <div class="swiper-container" id="swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <div class="bg-img img1"></div>
+          <img src="img/slider01.png" alt="">
         </div>
         <div class="swiper-slide">
-          <div class="bg-img img2"></div>
+            <img src="img/slider01.png" alt="">
         </div>
         <div class="swiper-slide">
-          <div class="bg-img img3"></div>
+            <img src="img/slider01.png" alt="">
         </div>
-      </div>
-      <!-- Add Arrows -->
-      <div class="swiper-button-next">
-        <i class="fas fa-chevron-circle-right fa-2x"></i>
-      </div>
-      <div class="swiper-button-prev">
-        <i class="fas fa-chevron-circle-left fa-2x"></i>
       </div>
       <!-- Add Pagination -->
       <div class="swiper-pagination"></div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next">
+          <i class="fas fa-chevron-circle-right fa-2x"></i>
+      </div>
+      <div class="swiper-button-prev">
+          <i class="fas fa-chevron-circle-left fa-2x"></i>
+      </div>
     </div>
     <!-- 中間內容 -->
     <div class="section1" id="abc">
       <div class="container">
-        <div id="sec01">
-          <div class="title">品牌故事</div>
-        </div>
-        <div class="sec02">
-          <div class="row">
-            <div class="col-md-6 col-12 sec02-left">
-              <h5 class="h501">好的堅果，如同鑽石般珍貴</h5>
-              <p class="p01">「堅果鑽」是我們為了
-                <br>「分享美味幸福」而設立的品牌。</p>
-              <p class="p01">
-                我們早年因為工作關係，經常出差旅遊， 因此嚐許多國家別具風味的點心。在一次小 旅程中，我們吃到了國外農場烘焙出的新鮮堅果， 不只帶有輕焙氣氛，更保留堅果原始的迷人風味。 因為愛上這份純粹，所以我們決定回到家鄉， 想將輕焙烘焙堅果滋味，傳遞給更多台灣朋友。
-                好的堅果，就如同鑽石原石，需要耐心專業的烘 焙技術，才能雕琢出鑽石般珍貴口感。
-              </p>
-              <p class="p01">「堅果鑽」用一心一意的職人精神，
-                <br>給您安心美味的好品質。</p>
-              <p>讓我們一起吃好果，品為幸福好生活。</p>
-            </div>
-            <div class="col-md-6 col-12 sec02-right">
-
-            </div>
+        <div class="back">
+          <div id="sec01">
+            <div class="title">品牌故事</div>
           </div>
-        </div>
-        <div class="sec03">對於堅果的品質，從產地到技術，</div>
-        <div class="sec04">我們沒有一絲懈怠</div>
-        <div class="sec08">
-          <div class="row">
-            <div class="col-md-4 col-12">
-              <img class="img-fluid" src="img/11110.png" alt="">
-              <p class="testcenter">擁有悠久栽培
-                <br>歷史的產地</p>
-              <p class="testcenter">經時光磨練的栽培技術，
-                <br>是培養好堅果的關鍵。</p>
-            </div>
-            <div class="col-md-4 col-12">
-              <img class="img-fluid" src="img/pp2.png" alt="">
-              <p class="testcenter2">100%最高品級
-                <br>的堅果品種</p>
-              <p class="testcenter2">只採用品及最高的堅果，
-                <br>再以烘培提出質感口味。</p>
-            </div>
-            <div class="col-md-4 col-12">
-              <img class="img-fluid" src="img/pp3.png" alt="">
-              <p class="testcenter3">頂極脆甜杏仁</p>
-              <p class="testcenter3">烘培前、中、後的堅果，
-                <br>我們都有專人仔細檢查，
-                <br>為您精挑完美品質。</p>
-            </div>
-          </div>
-        </div>
-        <div class="sec05">
-          <div class="title2">堅果鑽嚴選</div>
-        </div>
-        <div id="sec06">堅果鑽嚴選 / 精選堅果</div>
-        <div class="sec07">
-          <div class="row">
-            <div class="col-md-4 col-12">
-              <div class="img-fluid" data-toggle="modal" data-target="#exampleModal">
-                <img class="img-fluid" src="img/a01.png" alt="">
+          <div class="sec02">
+            <div class="row">
+              <div class="col-md-6 col-12 sec02-left">
+                <h5 class="h501">好的堅果，如同鑽石般珍貴</h5>
+                <p class="p01">「堅果鑽」是我們為了
+                  <br>「分享美味幸福」而設立的品牌。</p>
+                <p class="p01">
+                  我們早年因為工作關係，經常出差旅遊， 因此嚐許多國家別具風味的點心。在一次小 旅程中，我們吃到了國外農場烘焙出的新鮮堅果， 不只帶有輕焙氣氛，更保留堅果原始的迷人風味。 因為愛上這份純粹，所以我們決定回到家鄉， 想將輕焙烘焙堅果滋味，傳遞給更多台灣朋友。
+                  好的堅果，就如同鑽石原石，需要耐心專業的烘 焙技術，才能雕琢出鑽石般珍貴口感。
+                </p>
+                <p class="p01">「堅果鑽」用一心一意的職人精神，
+                  <br>給您安心美味的好品質。</p>
+                <p>讓我們一起吃好果，品為幸福好生活。</p>
               </div>
-              <p>頂極脆甜杏仁</p>
-              <p>$125</p>
-            </div>
-            <div class="col-md-4 col-12">
-              <div class="img-fluid" data-toggle="modal" data-target="#exampleModal2">
-                <img class="img-fluid" src="img/a02.png" alt="">
+              <div class="col-md-6 col-12 sec02-right">
+
               </div>
-              <!-- <img class="img-fluid" src="img/a02.png" alt="">
-                  <p>頂極脆甜杏仁</p>
-                  <p>$125</p> -->
             </div>
-            <div class="col-md-4 col-12">
-              <img class="img-fluid" src="img/a03.png" alt="">
-              <p>頂極脆甜杏仁</p>
-              <p>$125</p>
+          </div>
+          <div class="sec03">對於堅果的品質，從產地到技術，</div>
+          <div class="sec04">我們沒有一絲懈怠</div>
+          <div class="sec08">
+            <div class="row">
+              <div class="col-md-4 col-12">
+                <img class="img-fluid" src="img/11110.png" alt="">
+                <p class="testcenter">擁有悠久栽培
+                  <br>歷史的產地</p>
+                <p class="testcenter">經時光磨練的栽培技術，
+                  <br>是培養好堅果的關鍵。</p>
+              </div>
+              <div class="col-md-4 col-12">
+                <img class="img-fluid" src="img/pp2.png" alt="">
+                <p class="testcenter2">100%最高品級
+                  <br>的堅果品種</p>
+                <p class="testcenter2">只採用品及最高的堅果，
+                  <br>再以烘培提出質感口味。</p>
+              </div>
+              <div class="col-md-4 col-12">
+                <img class="img-fluid" src="img/pp3.png" alt="">
+                <p class="testcenter3">頂極脆甜杏仁</p>
+                <p class="testcenter3">烘培前、中、後的堅果，
+                  <br>我們都有專人仔細檢查，
+                  <br>為您精挑完美品質。</p>
+              </div>
             </div>
-            <div class="col-md-4 col-12">
-              <img class="img-fluid" src="img/a04.png" alt="">
-              <p>頂極脆甜杏仁</p>
-              <p>$125</p>
+          </div>
+          <div class="sec05">
+            <div class="title2">堅果鑽嚴選</div>
+          </div>
+          <div id="sec06">堅果鑽嚴選 / 精選堅果</div>
+          <div class="sec07">
+            <div class="row">
+              <div class="col-md-4 col-12">
+                <div class="img-fluid" data-toggle="modal" data-target="#exampleModal">
+                  <img class="img-fluid" src="img/a01.png" alt="">
+                </div>
+                <p>頂極脆甜杏仁</p>
+                <p>$125</p>
+              </div>
+              <div class="col-md-4 col-12">
+                <div class="img-fluid" data-toggle="modal" data-target="#exampleModal2">
+                  <img class="img-fluid" src="img/a02.png" alt="">
+                </div>
+                <!-- <img class="img-fluid" src="img/a02.png" alt="">
+                        <p>頂極脆甜杏仁</p>
+                        <p>$125</p> -->
+              </div>
+              <div class="col-md-4 col-12">
+                <img class="img-fluid" src="img/a03.png" alt="">
+                <p>頂極脆甜杏仁</p>
+                <p>$125</p>
+              </div>
+              <div class="col-md-4 col-12">
+                <img class="img-fluid" src="img/a04.png" alt="">
+                <p>頂極脆甜杏仁</p>
+                <p>$125</p>
+              </div>
+              <div class="col-md-4">
+                <img class="img-fluid" src="img/a05.png" alt="">
+                <p>頂極脆甜杏仁</p>
+                <p>$125</p>
+              </div>
+              <div class="col-md-4">
+                <img class="img-fluid" src="img/a06.png" alt="">
+                <p>頂極脆甜杏仁</p>
+                <p>$125</p>
+              </div>
+              <div class="col-md-4">
+                <img class="img-fluid" src="img/a07.png" alt="">
+                <p>頂極脆甜杏仁</p>
+                <p>$125</p>
+              </div>
+              <div class="col-md-4">
+                <img class="img-fluid" src="img/a08.png" alt="">
+                <p>頂極脆甜杏仁</p>
+                <p>$125</p>
+              </div>
+              <div class="col-md-4">
+                <img class="img-fluid" src="img/a09.png" alt="">
+                <p>頂極脆甜杏仁</p>
+                <p>$125</p>
+              </div>
+              <div class="col-md-4">
+                <img class="img-fluid" src="img/a10.png" alt="">
+                <p>頂極脆甜杏仁</p>
+                <p>$125</p>
+              </div>
             </div>
-            <div class="col-md-4">
-              <img class="img-fluid" src="img/a05.png" alt="">
-              <p>頂極脆甜杏仁</p>
-              <p>$125</p>
-            </div>
-            <div class="col-md-4">
-              <img class="img-fluid" src="img/a06.png" alt="">
-              <p>頂極脆甜杏仁</p>
-              <p>$125</p>
-            </div>
-            <div class="col-md-4">
-              <img class="img-fluid" src="img/a07.png" alt="">
-              <p>頂極脆甜杏仁</p>
-              <p>$125</p>
-            </div>
-            <div class="col-md-4">
-              <img class="img-fluid" src="img/a08.png" alt="">
-              <p>頂極脆甜杏仁</p>
-              <p>$125</p>
-            </div>
-            <div class="col-md-4">
-              <img class="img-fluid" src="img/a09.png" alt="">
-              <p>頂極脆甜杏仁</p>
-              <p>$125</p>
-            </div>
-            <div class="col-md-4">
-              <img class="img-fluid" src="img/a10.png" alt="">
-              <p>頂極脆甜杏仁</p>
-              <p>$125</p>
+          </div>
+          <div id="sec09">
+            <div class="title3">聯絡堅果鑽</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid container-fluid01">
+      <div class="footer">
+        <div class="row">
+          <div class="col-md-9 col-12 sec10-left">
+            <p class="p02">訂購專線:04-25122122
+              <br>營業時間:AM10:00~PM20:00
+              <br>堅果的家:台中市豐原區豐東路321號
+              <br>Line:堅果鑽堅果專賣店
+            </p>
+          </div>
+          <div class="col-md-3 col-12 sec10-right">
+            <div class="fb-page" data-href="https://zh-tw.facebook.com/Dimomdchestnuts" data-tabs="timeline" data-width="300" data-height="500"
+              data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+              <blockquote cite="https://zh-tw.facebook.com/Dimomdchestnuts" class="fb-xfbml-parse-ignore">
+                <a href="https://zh-tw.facebook.com/Dimomdchestnuts">堅果鑽-堅果專賣店</a>
+              </blockquote>
             </div>
           </div>
         </div>
-        <div id="sec09">
-          <div class="title3">聯絡堅果鑽</div>
-        </div>
-
       </div>
     </div>
     <div class="container-fluid">
-      <div class="123">
-          <div class="row">
-              <div class="col-md-9 col-12 sec10-left">
-                <p class="p02">訂購專線:04-25122122
-                  <br>營業時間:AM10:00~PM20:00
-                  <br>堅果的家:台中市豐原區豐東路321號
-                  <br>Line:堅果鑽堅果專賣店
-                </p>
-              </div>
-              <div class="col-md-3 col-12 sec10-right">
-                  <div class="fb-page" data-href="https://zh-tw.facebook.com/Dimomdchestnuts" data-tabs="timeline" data-width="500" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://zh-tw.facebook.com/Dimomdchestnuts" class="fb-xfbml-parse-ignore"><a href="https://zh-tw.facebook.com/Dimomdchestnuts">堅果鑽-堅果專賣店</a></blockquote></div>
-              </div>
-            </div>
-      </div>
+      <p class="p1">©堅果鑽堅果專賣店
+      </p>
     </div>
-
     <!-- Modal -->
     <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
@@ -604,8 +610,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
   <!-- Swiper JS -->
-
   <script src="js/swiper.min.js"></script>
+  <!-- LightBox -->
+  <script src="js/lightbox.js"></script>
 
   <div id="fb-root"></div>
   <script>(function (d, s, id) {
@@ -624,8 +631,11 @@
       let $fpage = $('#frontpage');
       let $bpage = $('#backpage');
       let $navbar = $('#navbar');
-      $bpage.hide();
-      $navbar.hide();
+      if($(window).width() > 576)
+      { 
+        $bpage.hide();
+        $navbar.hide();
+      }
 
 
       $bc1.on('click', () => {
@@ -633,25 +643,28 @@
         $navbar.show();
         $fpage.hide();
       })
-
-      // Initialize Swiper
-
-      var swiper = new Swiper('.swiper-container', {
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: '.swiper-pagination',
-        },
-      });
-
-
     })
+  </script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      loop:true,
+    });
   </script>
 
 
@@ -670,9 +683,6 @@
 
 
   </script>
-
-
-  <script src="/js/lightbox.js"></script>
 </body>
 
 </html>
