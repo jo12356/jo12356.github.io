@@ -45,13 +45,21 @@
       display: none;
     }
 
+    .navbar-nav li {
+      border-right: 1px solid gray;
+    }
+
+    .navbar-nav li:nth-child(1) {
+      border-left: 1px solid gray;
+    }
+
     .logo {
       width: 80px;
       height: 60px;
     }
 
     body {
-      position: relative;
+      /* position: relative; */
       background: rgb(255, 255, 255);
       font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
       font-size: 14px;
@@ -73,6 +81,7 @@
     .swiper-container {
       width: 100%;
       height: calc(100vh - 65px);
+      margin-bottom: 60px;
     }
 
     .swiper-slide {
@@ -118,6 +127,11 @@
     }
 
     #sec01 {
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    #sec01 .title {
       border: solid 1px rgb(247, 167, 20);
       width: 120px;
       height: 50px;
@@ -125,8 +139,30 @@
       text-align: center;
       line-height: 50px;
       margin: 0 auto;
-      margin-top: 30px;
-      margin-bottom: 30px;
+    }
+
+    #sec01::before {
+      content: '';
+      position: absolute;
+      width: calc((100% - 120px)/2);
+      height: 1px;
+      background-color: #231815;
+      left: 0;
+      top: 50%;
+    }
+
+    #sec01::after {
+      content: '';
+      position: absolute;
+      width: calc((100% - 120px)/2);
+      height: 1px;
+      background-color: #231815;
+      right: 0;
+      top: 50%;
+    }
+
+    .sec02 {
+      padding: 0 15px;
     }
 
     .sec02-left {
@@ -175,6 +211,11 @@
     }
 
     .sec05 {
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .sec05 .title2 {
       border: solid 1px rgb(247, 167, 20);
       width: 120px;
       height: 50px;
@@ -182,8 +223,26 @@
       text-align: center;
       line-height: 50px;
       margin: 0 auto;
-      margin-top: 30px;
-      margin-bottom: 30px;
+    }
+
+    .sec05::before {
+      content: '';
+      position: absolute;
+      width: calc((100% - 120px)/2);
+      height: 1px;
+      background-color: #231815;
+      left: 0;
+      top: 50%;
+    }
+
+    .sec05::after {
+      content: '';
+      position: absolute;
+      width: calc((100% - 120px)/2);
+      height: 1px;
+      background-color: #231815;
+      right: 0;
+      top: 50%;
     }
 
     .sec06 {
@@ -192,16 +251,6 @@
       font-size: 20px;
       line-height: 50px;
       margin-top: 30px;
-    }
-
-    .sec07 {
-      margin: 0 auto;
-      width: 970px;
-    }
-
-    .sec08 {
-      margin: 0 auto;
-      width: 970px;
     }
 
     .box {
@@ -233,22 +282,42 @@
     .testcenter3 {
       text-align: center;
     }
+    .gotop {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 9030;
+    }
+
+
+
+    @media screen and (max-width:576px) {}
   </style>
 </head>
 
 <body>
-  <div class="exit fixed-top">
-    <div class="bc1">
-      <i class="fas fa-angle-double-down fa-5x"></i>
+
+  <div class="frontpage">
+    <div class="exit fixed-top">
+      <div class="bc1" id="bc1">
+        <i class="fas fa-angle-double-down fa-5x"></i>
+      </div>
+      <div class="bc2"></div>
     </div>
-    <div class="bc2"></div>
   </div>
-  <div class="container1">
+
+  <div id="backpage">
+    <a href="#swiper" class="gotop"> <i class="fas fa-angle-double-down fa-5x"></i></a>
+
+    <!-- <a herf="#abc" style="width: 45px;height: 70px;position:fixed;right:10px;bottom:10%;z-index:9030;">
+      <i class="fas fa-angle-double-down fa-5x"></i>
+    </a> -->
     <!-- Content here -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <a class="navbar-brand" href="">
         <img class="logo" src="img/logo.jpg" alt="">
       </a>
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -288,173 +357,176 @@
         </ul>
       </div>
     </nav>
-  </div>
-  <!-- Swiper -->
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <div class="bg-img img1"></div>
+    <!-- Swiper -->
+    <div id="swiper" class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="bg-img img1"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="bg-img img2"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="bg-img img3"></div>
+        </div>
       </div>
-      <div class="swiper-slide">
-        <div class="bg-img img2"></div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next">
+        <i class="fas fa-chevron-circle-right fa-2x"></i>
       </div>
-      <div class="swiper-slide">
-        <div class="bg-img img3"></div>
+      <div class="swiper-button-prev">
+        <i class="fas fa-chevron-circle-left fa-2x"></i>
       </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
     </div>
-    <!-- Add Arrows -->
-    <div class="swiper-button-next">
-      <i class="fas fa-chevron-circle-right fa-2x"></i>
-    </div>
-    <div class="swiper-button-prev">
-      <i class="fas fa-chevron-circle-left fa-2x"></i>
-    </div>
-    <!-- Add Pagination -->
-    <div class="swiper-pagination"></div>
-  </div>
-  <!-- 中間內容 -->
-  <div class="section1">
-    <div class="container">
-      <div id="sec01">品牌故事</div>
-      <div class="sec02">
-        <div class="row">
-          <div class="col-md-6 sec02-left">
-            <h5 class="">好的堅果，如同鑽石般珍貴</h5>
-            <p>「堅果鑽」是我們為了
-              <br>「分享美味幸福」而設立的品牌。</p>
-            <p>
-              我們早年因為工作關係，經常出差旅遊， 因此嚐許多國家別具風味的點心。在一次小 旅程中，我們吃到了國外農場烘焙出的新鮮堅果， 不只帶有輕焙氣氛，更保留堅果原始的迷人風味。 因為愛上這份純粹，所以我們決定回到家鄉， 想將輕焙烘焙堅果滋味，傳遞給更多台灣朋友。
-              好的堅果，就如同鑽石原石，需要耐心專業的烘 焙技術，才能雕琢出鑽石般珍貴口感。
-            </p>
-            <p>「堅果鑽」用一心一意的職人精神，
-              <br>給您安心美味的好品質。</p>
-            <p>讓我們一起吃好果，品為幸福好生活。</p>
-          </div>
-          <div class="col-md-6 sec02-right">
+    <!-- 中間內容 -->
+    <div class="section1" id="abc">
+      <div class="container">
+        <div id="sec01">
+          <div class="title">品牌故事</div>
+        </div>
+        <div class="sec02">
+          <div class="row">
+            <div class="col-md-6 col-12 sec02-left">
+              <h5 class="h501">好的堅果，如同鑽石般珍貴</h5>
+              <p class="p01">「堅果鑽」是我們為了
+                <br>「分享美味幸福」而設立的品牌。</p>
+              <p class="p01">
+                我們早年因為工作關係，經常出差旅遊， 因此嚐許多國家別具風味的點心。在一次小 旅程中，我們吃到了國外農場烘焙出的新鮮堅果， 不只帶有輕焙氣氛，更保留堅果原始的迷人風味。 因為愛上這份純粹，所以我們決定回到家鄉， 想將輕焙烘焙堅果滋味，傳遞給更多台灣朋友。
+                好的堅果，就如同鑽石原石，需要耐心專業的烘 焙技術，才能雕琢出鑽石般珍貴口感。
+              </p>
+              <p class="p01">「堅果鑽」用一心一意的職人精神，
+                <br>給您安心美味的好品質。</p>
+              <p>讓我們一起吃好果，品為幸福好生活。</p>
+            </div>
+            <div class="col-md-6 col-12 sec02-right">
 
-          </div>
-        </div>
-      </div>
-      <div class="sec03">對於堅果的品質，從產地到技術，</div>
-      <div class="sec04">我們沒有一絲懈怠</div>
-      <div class="sec08">
-        <div class="row">
-          <div class="col-md-4">
-            <img class="img-fluid" src="img/11110.png" alt="">
-            <p class="testcenter">擁有悠久栽培
-              <br>歷史的產地</p>
-            <p class="testcenter">經時光磨練的栽培技術，
-              <br>是培養好堅果的關鍵。</p>
-          </div>
-          <div class="col-md-4">
-            <img class="img-fluid" src="img/pp2.png" alt="">
-            <p class="testcenter2">100%最高品級
-              <br>的堅果品種</p>
-            <p class="testcenter2">只採用品及最高的堅果，
-              <br>再以烘培提出質感口味。</p>
-          </div>
-          <div class="col-md-4">
-            <img class="img-fluid" src="img/pp3.png" alt="">
-            <p class="testcenter3">頂極脆甜杏仁</p>
-            <p class="testcenter3">烘培前、中、後的堅果，
-              <br>我們都有專人仔細檢查，
-              <br>為您精挑完美品質。</p>
-          </div>
-        </div>
-      </div>
-      <div class="sec05">堅果鑽嚴選</div>
-      <div class="sec06">堅果鑽嚴選 / 精選堅果</div>
-      <div class="sec07">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="img-fluid" data-toggle="modal" data-target="#exampleModal">
-              <img class="img-fluid" src="img/a01.png" alt="">
             </div>
-            <p>頂極脆甜杏仁</p>
-            <p>$125</p>
           </div>
-          <div class="col-md-4">
-            <div class="img-fluid" data-toggle="modal" data-target="#exampleModal2">
-              <img class="img-fluid" src="img/a02.png" alt="">
+        </div>
+        <div class="sec03">對於堅果的品質，從產地到技術，</div>
+        <div class="sec04">我們沒有一絲懈怠</div>
+        <div class="sec08">
+          <div class="row">
+            <div class="col-md-4 col-12">
+              <img class="img-fluid" src="img/11110.png" alt="">
+              <p class="testcenter">擁有悠久栽培
+                <br>歷史的產地</p>
+              <p class="testcenter">經時光磨練的栽培技術，
+                <br>是培養好堅果的關鍵。</p>
             </div>
-            <!-- <img class="img-fluid" src="img/a02.png" alt="">
-            <p>頂極脆甜杏仁</p>
-            <p>$125</p> -->
-          </div>
-          <div class="col-md-4">
-            <img class="img-fluid" src="img/a03.png" alt="">
-            <p>頂極脆甜杏仁</p>
-            <p>$125</p>
-          </div>
-          <div class="col-md-4">
-            <img class="img-fluid" src="img/a04.png" alt="">
-            <p>頂極脆甜杏仁</p>
-            <p>$125</p>
-          </div>
-          <div class="col-md-4">
-            <img class="img-fluid" src="img/a05.png" alt="">
-            <p>頂極脆甜杏仁</p>
-            <p>$125</p>
-          </div>
-          <div class="col-md-4">
-            <img class="img-fluid" src="img/a06.png" alt="">
-            <p>頂極脆甜杏仁</p>
-            <p>$125</p>
-          </div>
-          <div class="col-md-4">
-            <img class="img-fluid" src="img/a07.png" alt="">
-            <p>頂極脆甜杏仁</p>
-            <p>$125</p>
-          </div>
-          <div class="col-md-4">
-            <img class="img-fluid" src="img/a08.png" alt="">
-            <p>頂極脆甜杏仁</p>
-            <p>$125</p>
-          </div>
-          <div class="col-md-4">
-            <img class="img-fluid" src="img/a09.png" alt="">
-            <p>頂極脆甜杏仁</p>
-            <p>$125</p>
-          </div>
-          <div class="col-md-4">
-            <img class="img-fluid" src="img/a10.png" alt="">
-            <p>頂極脆甜杏仁</p>
-            <p>$125</p>
+            <div class="col-md-4 col-12">
+              <img class="img-fluid" src="img/pp2.png" alt="">
+              <p class="testcenter2">100%最高品級
+                <br>的堅果品種</p>
+              <p class="testcenter2">只採用品及最高的堅果，
+                <br>再以烘培提出質感口味。</p>
+            </div>
+            <div class="col-md-4 col-12">
+              <img class="img-fluid" src="img/pp3.png" alt="">
+              <p class="testcenter3">頂極脆甜杏仁</p>
+              <p class="testcenter3">烘培前、中、後的堅果，
+                <br>我們都有專人仔細檢查，
+                <br>為您精挑完美品質。</p>
+            </div>
           </div>
         </div>
+        <div class="sec05">
+          <div class="title2">堅果鑽嚴選</div>
+        </div>
+        <div class="sec06">堅果鑽嚴選 / 精選堅果</div>
+        <div class="sec07">
+          <div class="row">
+            <div class="col-md-4 col-12">
+              <div class="img-fluid" data-toggle="modal" data-target="#exampleModal">
+                <img class="img-fluid" src="img/a01.png" alt="">
+              </div>
+              <p>頂極脆甜杏仁</p>
+              <p>$125</p>
+            </div>
+            <div class="col-md-4 col-12">
+              <div class="img-fluid" data-toggle="modal" data-target="#exampleModal2">
+                <img class="img-fluid" src="img/a02.png" alt="">
+              </div>
+              <!-- <img class="img-fluid" src="img/a02.png" alt="">
+                  <p>頂極脆甜杏仁</p>
+                  <p>$125</p> -->
+            </div>
+            <div class="col-md-4 col-12">
+              <img class="img-fluid" src="img/a03.png" alt="">
+              <p>頂極脆甜杏仁</p>
+              <p>$125</p>
+            </div>
+            <div class="col-md-4 col-12">
+              <img class="img-fluid" src="img/a04.png" alt="">
+              <p>頂極脆甜杏仁</p>
+              <p>$125</p>
+            </div>
+            <div class="col-md-4">
+              <img class="img-fluid" src="img/a05.png" alt="">
+              <p>頂極脆甜杏仁</p>
+              <p>$125</p>
+            </div>
+            <div class="col-md-4">
+              <img class="img-fluid" src="img/a06.png" alt="">
+              <p>頂極脆甜杏仁</p>
+              <p>$125</p>
+            </div>
+            <div class="col-md-4">
+              <img class="img-fluid" src="img/a07.png" alt="">
+              <p>頂極脆甜杏仁</p>
+              <p>$125</p>
+            </div>
+            <div class="col-md-4">
+              <img class="img-fluid" src="img/a08.png" alt="">
+              <p>頂極脆甜杏仁</p>
+              <p>$125</p>
+            </div>
+            <div class="col-md-4">
+              <img class="img-fluid" src="img/a09.png" alt="">
+              <p>頂極脆甜杏仁</p>
+              <p>$125</p>
+            </div>
+            <div class="col-md-4">
+              <img class="img-fluid" src="img/a10.png" alt="">
+              <p>頂極脆甜杏仁</p>
+              <p>$125</p>
+            </div>
+          </div>
+        </div>
+        <div class="sec09">聯絡堅果鑽</div>
+        <form>
+          <div class="form-group row">
+            <label for="inputname3" class="col-sm-2 col-form-label">姓名</label>
+            <div class="col-sm-10">
+              <input type="name" class="form-control" id="inputname3" placeholder="name">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputphone3" class="col-sm-2 col-form-label">電話</label>
+            <div class="col-sm-10">
+              <input type="phone" class="form-control" id="inputphone3" placeholder="phone">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputemail3" class="col-sm-2 col-form-label">信箱</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="inputemail3" placeholder="email">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="input您的建議3" class="col-sm-2 col-form-label">您的建議</label>
+            <div class="col-sm-10">
+              <input type="您的建議" class="form-control" id="input您的建議3" placeholder="您的建議">
+            </div>
+          </div>
+          <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">送 出</button>
+          </div>
       </div>
-      <div class="sec09">聯絡堅果鑽</div>
-      <form>
-        <div class="form-group row">
-          <label for="inputname3" class="col-sm-2 col-form-label">姓名</label>
-          <div class="col-sm-10">
-            <input type="name" class="form-control" id="inputname3" placeholder="name">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="inputphone3" class="col-sm-2 col-form-label">電話</label>
-          <div class="col-sm-10">
-            <input type="phone" class="form-control" id="inputphone3" placeholder="phone">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="inputemail3" class="col-sm-2 col-form-label">信箱</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputemail3" placeholder="email">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="input您的建議3" class="col-sm-2 col-form-label">您的建議</label>
-          <div class="col-sm-10">
-            <input type="您的建議" class="form-control" id="input您的建議3" placeholder="您的建議">
-          </div>
-        </div>
-        <div class="col-sm-10">
-          <button type="submit" class="btn btn-primary">送 出</button>
-        </div>
+      </form>
     </div>
-    </form>
-  </div>
   </div>
 
   <!-- Modal -->
@@ -470,7 +542,10 @@
             </div>
             <!-- 文字 -->
             <div class="col-md-4 col-12">
-
+              <p>
+                頂級白玉松子
+                <br>哈爾濱松子精緻如白玉，森林清的新果仁香氣，在烘培後融合了獨特的木質甘甜韻味，是茶餘飯後、解膩消食的最佳點心。
+              </p>
             </div>
           </div>
         </div>
@@ -490,13 +565,19 @@
             </div>
             <!-- 文字 -->
             <div class="col-md-4">
-
+              <p>
+                頂級白玉松子
+                <br>哈爾濱松子精緻如白玉，森林清的新果仁香氣，在烘培後融合了獨特的木質甘甜韻味，是茶餘飯後、解膩消食的最佳點心。
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  </div>
+
+
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -510,19 +591,47 @@
 
   <script src="js/swiper.min.js"></script>
 
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper('.swiper-container', {
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-      },
-    });
 
+  <script>
+    // 歡迎進入網站
+    $(document).ready(() => {
+      let $bc1 = $('#bc1');
+      let $fpage = $('#frontpage');
+      let $bpage = $('#backpage');
+      let $navbar = $('#navbar');
+      $bpage.hide();
+      $navbar.hide();
+
+
+      $bc1.on('click', () => {
+        $bpage.show();
+        $navbar.show();
+        $fpage.hide();
+      })
+
+      // Initialize Swiper
+
+      var swiper = new Swiper('.swiper-container', {
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+        },
+      });
+
+
+    })
   </script>
+
+
+
+
   <script>
     $("nav").hover(function () {
       $(".navbar-nav").css("display", "flex");
@@ -533,7 +642,10 @@
     $(".bc1").click(function () {
       $(".exit").fadeOut(1500);
     });
+
+
   </script>
+
 
   <script src="/js/lightbox.js"></script>
 </body>
