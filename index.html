@@ -23,23 +23,27 @@
       width: 100%;
       height: 100vh;
       background-image: url('img/ppc.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
       z-index: 99999;
       position: relative;
     }
 
-    .bc1 {
-      width: 100px;
-      height: 100px;
-      background-size: cover;
+    .bcc {
+      display: none;
       position: absolute;
+      text-align: center;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      /* margin: 0 auto;
-      margin-top: 500px; */
     }
 
-    .bc2 {}
+    .bc2 {
+      background-image: url('img/logo.jpg');
+      width: 200px;
+      height: 120px;
+      background-size: cover;
+    }
 
     .navbar-nav {
       display: none;
@@ -54,8 +58,8 @@
     }
 
     .logo {
-      width: 80px;
-      height: 60px;
+      width: 150px;
+      height: 90px;
     }
 
     body {
@@ -64,6 +68,11 @@
       font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
       font-size: 14px;
       color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
       margin: 0;
       padding: 0;
     }
@@ -102,12 +111,16 @@
       -webkit-align-items: center;
       align-items: center;
     }
-    .swiper-slide > img{
+
+    .swiper-slide>img {
       width: 100%;
     }
-    .swiper-button-next, .swiper-button-prev {
+
+    .swiper-button-next,
+    .swiper-button-prev {
       background-image: none;
     }
+
     #sec01 {
       position: relative;
       margin-bottom: 30px;
@@ -156,11 +169,11 @@
       color: white;
     }
 
-    h5 {
+    .h501 {
       padding-top: 150px;
     }
 
-    p {
+    .p01 {
       padding-top: 8px;
     }
 
@@ -294,23 +307,93 @@
       bottom: 20px;
       z-index: 9030;
     }
+
     .back {
       background-color: #fff;
     }
-    .container-fluid01{
-      background-color: rgba(247, 250, 91, 0.5);
+
+    .container-fluid01 {
+      background-color: rgba(251, 253, 142, 0.5);
     }
-    .swiper-button-next, .swiper-button-prev{
+
+    .swiper-button-next,
+    .swiper-button-prev {
       width: 28px;
       height: 28px;
       margin-top: -14px;
     }
+
+    .p122 {
+      font-size: 20px;
+      line-height: 30px;
+      letter-spacing: 2px;
+    }
+
+    .p123 {
+      padding-bottom: 5px;
+      text-align: center;
+      margin-bottom: 0;
+      padding-top: 5px;
+      color: rgb(65, 19, 19);
+    }
+
+    .container-fluid02 {
+      background-color: rgb(143, 141, 141);
+
+    }
+
+    .fb2,
+    .fb3 {
+      float: left;
+    }
+
+    .fb2 {
+      margin-left: 50px;
+    }
+
+    .fb3 {
+      margin-left: 30px;
+    }
+
+    .fb-page {
+      float: left;
+    }
+
+    .p22,
+    .p23 {
+      line-height: 28px;
+      letter-spacing: 1.5px;
+    }
+
+    .footer {
+      padding: 30px 0;
+    }
+
     @media screen and (max-width:576px) {
       .frontpage {
         display: none;
       }
       #backpage {
-        display: block; 
+        display: block;
+      }
+      .p122 {
+        font-size: 20px;
+        letter-spacing: 2px;
+      }
+      .fb-page {
+        float: none;
+        margin-bottom: 20px;
+      }
+      .fb2,
+      .fb3 {
+        float: none;
+      }
+      .fb2,
+      .fb3 {
+        margin-left: 0;
+      }
+      .footer {
+        text-align: center;
       }
     }
   </style>
@@ -320,16 +403,18 @@
 
   <div class="frontpage">
     <div class="exit fixed-top">
-      <div class="bc1" id="bc1">
-        <i class="fas fa-angle-double-down fa-5x"></i>
+      <div class="bcc">
+        <div class="bc2"></div>
+        <div class="bc1" id="bc1">
+          <i class="fas fa-angle-double-down fa-5x" style="color:gray"></i>
+        </div>
       </div>
-      <div class="bc2"></div>
     </div>
   </div>
 
   <div id="backpage">
     <a href="#swiper" class="gotop">
-      <i class="fas fa-angle-double-down fa-5x"></i>
+      <i class="fas fa-arrow-alt-circle-up fa-3x" style="color:rgb(247, 87, 23)"></i>
     </a>
 
     <!-- <a herf="#abc" style="width: 45px;height: 70px;position:fixed;right:10px;bottom:10%;z-index:9030;">
@@ -388,20 +473,20 @@
           <img src="img/slider01.png" alt="">
         </div>
         <div class="swiper-slide">
-            <img src="img/slider01.png" alt="">
+          <img src="img/slider01.png" alt="">
         </div>
         <div class="swiper-slide">
-            <img src="img/slider01.png" alt="">
+          <img src="img/slider01.png" alt="">
         </div>
       </div>
       <!-- Add Pagination -->
       <div class="swiper-pagination"></div>
       <!-- Add Arrows -->
       <div class="swiper-button-next">
-          <i class="fas fa-chevron-circle-right fa-2x"></i>
+        <i class="fas fa-chevron-circle-right fa-2x"></i>
       </div>
       <div class="swiper-button-prev">
-          <i class="fas fa-chevron-circle-left fa-2x"></i>
+        <i class="fas fa-chevron-circle-left fa-2x"></i>
       </div>
     </div>
     <!-- 中間內容 -->
@@ -526,29 +611,46 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid container-fluid01">
+    <div class="container-fluid01">
       <div class="footer">
-        <div class="row">
-          <div class="col-md-9 col-12 sec10-left">
-            <p class="p02">訂購專線:04-25122122
-              <br>營業時間:AM10:00~PM20:00
-              <br>堅果的家:台中市豐原區豐東路321號
-              <br>Line:堅果鑽堅果專賣店
-            </p>
-          </div>
-          <div class="col-md-3 col-12 sec10-right">
-            <div class="fb-page" data-href="https://zh-tw.facebook.com/Dimomdchestnuts" data-tabs="timeline" data-width="300" data-height="500"
-              data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-              <blockquote cite="https://zh-tw.facebook.com/Dimomdchestnuts" class="fb-xfbml-parse-ignore">
-                <a href="https://zh-tw.facebook.com/Dimomdchestnuts">堅果鑽-堅果專賣店</a>
-              </blockquote>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-5 col-12 sec10-left">
+              <p class="p122">訂購專線:04-25122122
+                <br>營業時間:AM10:00~PM20:00
+                <br>Line id:@dcnut.com
+                <br>堅果的家:台中市豐原區豐東路321號
+              </p>
+            </div>
+            <div class="col-md-7 col-12 sec10-right">
+              <div class="fb-page" data-href="https://zh-tw.facebook.com/Dimomdchestnuts" data-tabs="timeline" data-width="350" data-height="75"
+                data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                <blockquote cite="https://zh-tw.facebook.com/Dimomdchestnuts" class="fb-xfbml-parse-ignore">
+                  <a href="https://zh-tw.facebook.com/Dimomdchestnuts">堅果鑽-堅果專賣店</a>
+                </blockquote>
+              </div>
+              <div class="fb2">
+                <h5 class="h505">關於我們</h5>
+                <p class="p22">品牌故事
+                </p>
+              </div>
+              <div class="fb3">
+                <h5 class="h506">堅果鑽嚴選</h5>
+                <p class="p23">精選堅果
+                  <br>精選乾果
+                  <br>精選乾果
+                  <br>精選手工美點
+                  <br>精選養生美點
+                  <br>精選禮盒組
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="container-fluid">
-      <p class="p1">©堅果鑽堅果專賣店
+    <div class="container-fluid02">
+      <p class="p123">Copyright © 2018 堅果鑽堅果專賣店 All rights reserved.
       </p>
     </div>
     <!-- Modal -->
@@ -631,8 +733,7 @@
       let $fpage = $('#frontpage');
       let $bpage = $('#backpage');
       let $navbar = $('#navbar');
-      if($(window).width() > 576)
-      { 
+      if ($(window).width() > 576) {
         $bpage.hide();
         $navbar.hide();
       }
@@ -663,7 +764,7 @@
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
-      loop:true,
+      loop: true,
     });
   </script>
 
@@ -671,6 +772,7 @@
 
 
   <script>
+    $(".bcc").fadeIn(1500);
     $("nav").hover(function () {
       $(".navbar-nav").css("display", "flex");
     }, function () {
@@ -682,6 +784,24 @@
     });
 
 
+  </script>
+  <script>
+    $(function () {
+      $('a[href*="#"]:not([href="#"])').click(function () {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          console.log(target);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+
+          if (target.length) {
+            $('html, body').animate({
+              scrollTop: target.offset().top - 116
+            }, 1500);
+            return false;
+          }
+        }
+      });
+    });
   </script>
 </body>
 
